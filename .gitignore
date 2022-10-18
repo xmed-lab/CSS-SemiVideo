@@ -1,0 +1,15 @@
+.ipynb_checkpoints/
+__pycache__/
+*.swp
+echonet.cfg
+.echonet.cfg
+*.pyc
+echonet.egg-info/
+*.pth
+*.pt
+*.npy
+output/zdbg*
+output/*/size
+output/*/videos
+*.avi
+*.zip
