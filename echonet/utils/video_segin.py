@@ -529,12 +529,7 @@ def test_epoch_all(model, dataset, train, optim, device, save_all=False, block_s
                     #### we only ever use cpu for testing
                     all_output = torch.ones((X1.shape[0]))
 
-
-                if isinstance(model.module, echonet.models.rnet2dp1.VideoResNet_ncor):
-                    all_output_avg = (all_output[0] + all_output[1] + all_output[2] + all_output[3]) / 4
-                    reg1.append(all_output_avg.detach().cpu().numpy())
-                else:
-                    reg1.append(all_output.detach().cpu().numpy())
+                reg1.append(all_output.detach().cpu().numpy())
 
             reg1 = np.vstack(reg1)
             reg1_mean = reg1.reshape(batch, n_clips, -1).mean(1)
